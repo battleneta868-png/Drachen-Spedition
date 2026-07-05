@@ -8,26 +8,25 @@
         :root { --drachen-gruen: #2bcd03; --dark-bg: #0a0a0a; --panel-bg: #111111; }
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: #eeeeee; margin: 0; line-height: 1.6; }
         header { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://imgur.com'); background-size: cover; background-position: center; padding: 60px 20px; text-align: center; border-bottom: 4px solid var(--drachen-gruen); }
-        .main-logo { width: 100%; max-width: 450px; border-radius: 15px; box-shadow: 0 0 30px rgba(43, 205, 3, 0.3); }
+        .main-logo { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 0 30px rgba(43, 205, 3, 0.4); }
         h1 { font-size: 3rem; color: var(--drachen-gruen); margin: 15px 0; letter-spacing: 3px; text-shadow: 2px 2px 5px black; }
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
         .card { background: var(--panel-bg); padding: 30px; border-radius: 12px; border-top: 4px solid var(--drachen-gruen); margin-bottom: 30px; }
         h2, h3 { color: var(--drachen-gruen); text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
-        .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 2px solid #222; background-color: #222; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 40px 0; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid #222; }
         .paint-box { background: #000; padding: 20px; border-radius: 8px; border: 1px solid #333; margin-top: 15px; }
         .color-code { font-family: monospace; color: var(--drachen-gruen); font-weight: bold; }
-        .btn { background: var(--drachen-gruen); color: black; padding: 18px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; margin-top: 20px; box-shadow: 0 4px 15px rgba(43, 205, 3, 0.4); }
+        .btn { background: var(--drachen-gruen); color: black; padding: 18px 45px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(43, 205, 3, 0.4); }
         .btn:hover { background: #1e8a02; color: white; transform: scale(1.03); }
         footer { text-align: center; padding: 60px; color: #444; font-size: 0.9rem; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 15px; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://imgur.com" alt="Drachen Spedition Logo" class="main-logo" onerror="this.src='https://placeholder.com'">
+    <!-- Hauptbild aus deinem Album -->
+    <img src="https://imgur.com" alt="Drachen Spedition" class="main-logo">
     <h1>DRACHEN SPEDITION</h1>
     <p>GEMEINSCHAFT | SPASS | FREIHEIT</p>
 </header>
@@ -39,7 +38,7 @@
         <p>Wir sind eine Gemeinschaft von leidenschaftlichen Truckern, die die Straßen von ETS2 und ATS unsicher machen – <b>ganz ohne Druck und starre Regeln!</b> Bei uns steht der Spaß am Fahren, die Gemeinschaft und ein entspanntes Miteinander im Vordergrund. Egal ob Feierabend-Fahrer oder Gelegenheits-Trucker: Bei uns findet jeder seinen Platz hinterm Steuer.</p>
         
         <h3>Das Besondere bei uns:</h3>
-        <ul>
+        <ul style="list-style: none; padding: 0;">
             <li>🚫 <b>Kein Kilometerzwang:</b> Fahr so viel oder so wenig, wie du möchtest und Zeit hast.</li>
             <li>❌ <b>Keine Verpflichtungen:</b> Reallife geht immer vor. Es gibt keine Pflicht-Onlinezeiten.</li>
             <li>🤝 <b>Gemeinschaft:</b> Spontane Runden und gemeinsame Events für jeden, der Lust hat.</li>
@@ -48,33 +47,30 @@
     </div>
 
     <div class="card">
-        <h2>Firmen-Reglement (Offizielle Konvois)</h2>
-        <p>Für ein professionelles Bild bei Events nutzen wir folgendes Design:</p>
-        
+        <h2>Firmen-Reglement (Konvois)</h2>
         <div class="paint-box">
             <strong>🚛 LKW Design:</strong><br>
             Grün: <span class="color-code">126 | 100 | 87</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
         </div>
-
         <div class="paint-box">
             <strong>📦 Trailer Design:</strong><br>
             Grün: <span class="color-code">126 | 100 | 100</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
         </div>
-
         <div class="paint-box">
             <strong>🏷️ Player-Tag:</strong><br>
-            Text: <span class="color-code">Drachen Sped</span> | Farbe: <span class="color-code">R: 43 | G: 205 | B: 3</span>
+            Name: <span class="color-code">Drachen Sped</span> | Farbe: <span class="color-code">R: 43 | G: 205 | B: 3</span>
         </div>
     </div>
 
     <h2 style="text-align: center;">Impressionen</h2>
     <div class="gallery">
-        <img src="https://imgur.com" alt="Flotte 1">
-        <img src="https://imgur.com" alt="Flotte 2">
-        <img src="https://imgur.com" alt="Flotte 3">
+        <!-- Bilder direkt aus deinem Album verlinkt -->
+        <img src="https://imgur.com" alt="Drachen Emblem">
+        <img src="https://imgur.com" alt="ETS2 Trucking">
+        <img src="https://imgur.com" alt="ATS Fahrt">
     </div>
 
-    <div style="text-align: center;">
+    <div style="text-align: center; margin-top: 40px;">
         <a href="https://discord.gg" target="_blank" class="btn">JETZT BEWERBEN (DISCORD)</a>
     </div>
 

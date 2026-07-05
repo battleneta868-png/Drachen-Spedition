@@ -7,41 +7,22 @@
     <style>
         :root { --drachen-gruen: #2bcd03; --dark-bg: #0a0a0a; --panel-bg: #111111; }
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: #eeeeee; margin: 0; line-height: 1.6; }
-        
-        /* Header */
         header { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), #000; padding: 60px 20px; text-align: center; border-bottom: 4px solid var(--drachen-gruen); }
         .main-logo { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 0 30px rgba(43, 205, 3, 0.5); }
-        h1 { font-size: 3.5rem; color: var(--drachen-gruen); margin: 15px 0; letter-spacing: 3px; text-shadow: 2px 2px 5px black; }
-        
-        /* Navigation Reiter */
-        .nav-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin: 30px 0; padding: 0 20px; }
-        .tab-btn { background: #1a1a1a; color: white; border: 2px solid var(--drachen-gruen); padding: 12px 25px; cursor: pointer; font-weight: bold; border-radius: 5px; transition: 0.3s; font-size: 1.1rem; }
-        .tab-btn:hover { background: var(--drachen-gruen); color: black; box-shadow: 0 0 15px var(--drachen-gruen); }
-        .tab-btn.active { background: var(--drachen-gruen); color: black; }
-
-        .container { max-width: 1000px; margin: auto; padding: 20px; text-align: center; }
-        
-        /* Content Sektionen */
-        .content-section { display: none; animation: fadeIn 0.5s ease; }
-        .content-section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .card { background: var(--panel-bg); padding: 35px; border-radius: 12px; border-top: 4px solid var(--drachen-gruen); margin-bottom: 30px; text-align: center; }
-        h2, h3 { color: var(--drachen-gruen); text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px; margin-top: 0; }
-        
-        /* Galerie */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
-        .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 2px solid #222; }
-        
-        /* Lackierung & Discord */
-        .paint-box { background: #000; padding: 20px; border-radius: 8px; border: 1px solid #333; margin: 15px auto; max-width: 500px; text-align: left; }
+        h1 { font-size: 3rem; color: var(--drachen-gruen); margin: 15px 0; letter-spacing: 3px; text-shadow: 2px 2px 5px black; }
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .card { background: var(--panel-bg); padding: 30px; border-radius: 12px; border-top: 4px solid var(--drachen-gruen); height: 100%; box-sizing: border-box; }
+        h2, h3 { color: var(--drachen-gruen); text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 40px 0; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #222; }
+        .paint-box { background: #000; padding: 15px; border-radius: 8px; border: 1px solid #333; margin-top: 10px; text-align: left; }
         .color-code { font-family: monospace; color: var(--drachen-gruen); font-weight: bold; }
-        .btn { background: var(--drachen-gruen); color: black; padding: 20px 50px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.4rem; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(43, 205, 3, 0.4); border: none; cursor: pointer; }
-        .btn:hover { background: #1e8a02; color: white; transform: scale(1.05); }
-        
+        .btn { background: var(--drachen-gruen); color: black; padding: 18px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; margin-top: 20px; box-shadow: 0 4px 15px rgba(43, 205, 3, 0.4); }
+        .btn:hover { background: #1e8a02; color: white; transform: scale(1.03); }
+        .tmp-link { color: var(--drachen-gruen); text-decoration: none; font-weight: bold; display: block; margin-top: 10px; border: 1px solid var(--drachen-gruen); padding: 10px; border-radius: 5px; text-align: center; transition: 0.3s; }
+        .tmp-link:hover { background: var(--drachen-gruen); color: black; }
         footer { text-align: center; padding: 60px; color: #444; font-size: 0.9rem; }
-        ul { list-style: none; padding: 0; display: inline-block; text-align: left; }
-        li { margin-bottom: 15px; font-size: 1.1rem; }
     </style>
 </head>
 <body>
@@ -52,99 +33,72 @@
     <p>GEMEINSCHAFT | SPASS | FREIHEIT</p>
 </header>
 
-<!-- Reiter-Menü -->
-<nav class="nav-container">
-    <button class="tab-btn active" onclick="openTab(event, 'home')">Startseite</button>
-    <button class="tab-btn" onclick="openTab(event, 'vorstellung')">Spedi-Vorstellung</button>
-    <button class="tab-btn" onclick="openTab(event, 'regeln')">Regeln & Design</button>
-    <button class="tab-btn" onclick="openTab(event, 'rekrutierung')">Discord & Bewerben</button>
-    <button class="tab-btn" onclick="window.open('https://truckersmp.com', '_blank')">TruckersMP Profil</button>
-</nav>
-
 <div class="container">
     
-    <!-- STARTSEITE -->
-    <div id="home" class="content-section active">
+    <div class="card" style="margin-bottom: 30px;">
+        <h2>Herzlich Willkommen!</h2>
+        <p>Wir sind eine Gemeinschaft von leidenschaftlichen Truckern, die die Straßen von ETS2 und ATS unsicher machen – <b>ganz ohne Druck und starre Regeln!</b> Bei uns steht der Spaß am Fahren und ein entspanntes Miteinander im Vordergrund.</p>
+        
+        <h3>Das Besondere bei uns:</h3>
+        <p>
+            🚫 <b>Kein Kilometerzwang:</b> Fahr so viel du willst.<br>
+            ❌ <b>Keine Verpflichtungen:</b> Reallife geht immer vor.<br>
+            🤝 <b>Gemeinschaft:</b> Spontane Runden & Events.<br>
+            🚛 <b>Convois:</b> Wir fahren regelmäßig gemeinsam.<br>
+            🎮 <b>Hardware egal:</b> Wheel, Tastatur oder Controller.<br>
+            💻 <b>Setup offen:</b> Hauptsache Spaß am Fahren!
+        </p>
+    </div>
+
+    <div class="grid">
+        <!-- TruckersMP Sektion -->
         <div class="card">
-            <h2>Herzlich Willkommen!</h2>
-            <p>Wir sind eine Gemeinschaft von leidenschaftlichen Truckern, die die Straßen von ETS2 und ATS unsicher machen – <b>ganz ohne Druck und starre Regeln!</b> Bei uns steht der Spaß am Fahren, die Gemeinschaft und ein entspanntes Miteinander im Vordergrund.</p>
-            <h2 style="margin-top: 40px;">Impressionen</h2>
-            <div class="gallery">
-                <img src="b38fdb99-79e5-4217-99b2-9f90bf9454da.png" alt="Impression 1">
-                <img src="content.png" alt="Impression 2">
-                <img src="content1.png" alt="Impression 3">
+            <h2>📊 TruckersMP Status</h2>
+            <p>Offizielle VTC Daten der Drachen Spedition:</p>
+            <a href="https://truckersmp.com" target="_blank" class="tmp-link">VTC Profil (ID: 84424)</a>
+            <a href="https://truckersmp.com/members" target="_blank" class="tmp-link">Fahrerliste</a>
+            <a href="https://truckersmp.com/news" target="_blank" class="tmp-link">News & Events</a>
+        </div>
+
+        <!-- Design Sektion -->
+        <div class="card">
+            <h2>🎨 Firmen-Design</h2>
+            <div class="paint-box">
+                <strong>🚛 LKW:</strong><br>
+                <span class="color-code">Grün: 126 | 100 | 87</span><br>
+                <span class="color-code">Grau: 0 | 0 | 20</span><br>
+                Rest: Schwarz
+            </div>
+            <div class="paint-box">
+                <strong>📦 Trailer:</strong><br>
+                <span class="color-code">Grün: 126 | 100 | 100</span><br>
+                <span class="color-code">Grau: 0 | 0 | 20</span><br>
+                Rest: Schwarz
+            </div>
+            <div class="paint-box">
+                <strong>🏷️ Tag:</strong><br>
+                <span class="color-code">Drachen Sped (R:43 G:205 B:3)</span>
             </div>
         </div>
     </div>
 
-    <!-- SPEDI-VORSTELLUNG -->
-    <div id="vorstellung" class="content-section">
-        <div class="card">
-            <h2>Über die Drachen Spedition</h2>
-            <p>Egal ob Feierabend-Fahrer oder Gelegenheits-Trucker: Bei uns findet jeder seinen Platz hinterm Steuer. Wir genießen die weiten Straßen von Europa und Amerika gemeinsam.</p>
-            <h3>Das Besondere bei uns:</h3>
-            <ul>
-                <li>🚫 <b>Kein Kilometerzwang:</b> Fahr so viel oder so wenig, wie du möchtest.</li>
-                <li>❌ <b>Keine Verpflichtungen:</b> Reallife geht immer vor. Keine Pflicht-Onlinezeiten.</li>
-                <li>🤝 <b>Gemeinschaft:</b> Spontane Runden und gemeinsame Events für jeden.</li>
-            </ul>
-            <p>Lust auf entspanntes Cruisen? Dann starte jetzt deinen Motor!</p>
-        </div>
+    <h2 style="text-align: center;">Impressionen</h2>
+    <div class="gallery">
+        <img src="b38fdb99-79e5-4217-99b2-9f90bf9454da.png" alt="Impression 1">
+        <img src="content.png" alt="Impression 2">
+        <img src="content1.png" alt="Impression 3">
+        <img src="fb98c24b-978c-4dd7-baed-bb575589" alt="Impression 4">
     </div>
 
-    <!-- REGELN & DESIGN -->
-    <div id="regeln" class="content-section">
-        <div class="card">
-            <h2>Was wir von unseren Fahrern erwarten</h2>
-            <p>Wir erwarten einen respektvollen Umgang und Spaß an der Simulation. Damit wir als Team erkannt werden, nutzen wir bei offiziellen Fahrten unser Firmendesign:</p>
-            
-            <div class="paint-box">
-                <strong>🚛 LKW Design:</strong><br>
-                Grün: <span class="color-code">126 | 100 | 87</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
-            </div>
-            <div class="paint-box">
-                <strong>📦 Trailer Design:</strong><br>
-                Grün: <span class="color-code">126 | 100 | 100</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
-            </div>
-            <div class="paint-box">
-                <strong>🏷️ Player-Tag:</strong><br>
-                Name: <span class="color-code">Drachen Sped</span> | Farbe: <span class="color-code">R: 43 | G: 205 | B: 3</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- DISCORD & REKRUTIERUNG -->
-    <div id="rekrutierung" class="content-section">
-        <div class="card">
-            <h2>Werde Teil des Teams</h2>
-            <p>Komm auf unseren Discord-Server, um dich zu bewerben oder einfach mit uns zu quatschen. Wir freuen uns auf dich!</p>
-            <div style="margin-top: 30px;">
-                <a href="https://discord.gg" target="_blank" class="btn">JETZT BEWERBEN (DISCORD)</a>
-            </div>
-        </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="https://discord.gg" target="_blank" class="btn">JETZT BEWERBEN (DISCORD)</a>
     </div>
 
 </div>
 
 <footer>
-    &copy; 2026 Drachen Spedition | Virtual Trucking Company
+    &copy; 2026 Drachen Spedition | VTC-ID: 84424
 </footer>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, content, tablinks;
-        content = document.getElementsByClassName("content-section");
-        for (i = 0; i < content.length; i++) {
-            content[i].classList.remove("active");
-        }
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].classList.remove("active");
-        }
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
 
 </body>
 </html>

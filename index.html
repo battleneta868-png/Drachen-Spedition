@@ -3,104 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drachen Spedition | Offizielle VTC</title>
+    <title>Drachen Spedition | Offizielle TruckersMP VTC</title>
     <style>
         :root { --neon-green: #32CD32; --dark-bg: #0a0a0a; --panel-bg: #151515; }
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: #eeeeee; margin: 0; line-height: 1.6; }
-        
-        /* Header & Navigation */
-        header { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://imgur.com'); background-size: cover; background-position: center; padding: 80px 20px; text-align: center; border-bottom: 3px solid var(--neon-green); }
-        .main-logo { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 0 30px rgba(50, 205, 50, 0.3); margin-bottom: 20px; }
-        h1 { font-size: 3rem; color: var(--neon-green); margin: 10px 0; letter-spacing: 3px; text-shadow: 2px 2px 5px black; }
-        
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        
-        /* Sektionen */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: var(--panel-bg); padding: 25px; border-radius: 10px; border-top: 3px solid var(--neon-green); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2); }
-        
-        h2 { color: var(--neon-green); border-bottom: 1px solid #333; padding-bottom: 10px; text-transform: uppercase; }
-
-        /* Bildergalerie */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
-        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #444; transition: 0.3s; cursor: pointer; }
+        header { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://imgur.com'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; border-bottom: 4px solid var(--neon-green); }
+        .main-logo { width: 100%; max-width: 550px; border-radius: 15px; box-shadow: 0 0 35px rgba(50, 205, 50, 0.4); }
+        h1 { font-size: 3.5rem; color: var(--neon-green); margin: 15px 0; letter-spacing: 4px; text-shadow: 3px 3px 6px black; }
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: var(--panel-bg); padding: 25px; border-radius: 12px; border-top: 4px solid var(--neon-green); transition: 0.3s; height: 100%; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(50, 205, 50, 0.25); }
+        h2 { color: var(--neon-green); text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 12px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 50px 0; }
+        .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 2px solid #222; transition: 0.4s; cursor: pointer; }
         .gallery img:hover { border-color: var(--neon-green); filter: brightness(1.2); }
-
-        /* Hardware / Zentrale */
-        .hardware-list { list-style: none; padding: 0; }
-        .hardware-list li { padding: 8px 0; border-bottom: 1px solid #222; }
-        .hardware-list b { color: var(--neon-green); }
-
-        /* Button */
-        .cta-box { text-align: center; background: #111; padding: 50px; border-radius: 15px; margin-top: 50px; border: 1px solid #222; }
-        .btn { background: var(--neon-green); color: black; padding: 20px 45px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.3rem; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4); }
-        .btn:hover { background: #228B22; color: white; transform: scale(1.05); }
-
-        footer { text-align: center; padding: 40px; color: #555; font-size: 0.9rem; }
+        .btn { background: var(--neon-green); color: black; padding: 18px 45px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3); }
+        .btn:hover { background: #228B22; color: white; transform: scale(1.03); }
+        .tmp-link { color: var(--neon-green); text-decoration: none; font-weight: bold; display: block; margin-top: 15px; }
+        footer { text-align: center; padding: 60px; color: #444; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://imgur.com" alt="Drachen Spedition Header" class="main-logo">
+    <img src="https://imgur.com" alt="Drachen Spedition Logo" class="main-logo">
     <h1>DRACHEN SPEDITION</h1>
-    <p>QUALITÄT | DISZIPLIN | ZUSAMMENHALT</p>
+    <p>ERFAHRUNG | DISZIPLIN | GEMEINSCHAFT</p>
 </header>
 
 <div class="container">
     
+    <!-- Erste Sektion: TruckersMP & Über Uns -->
     <div class="grid">
-        <!-- Über Uns Sektion -->
         <div class="card">
-            <h2>Über uns</h2>
-            <p>Die Drachen Spedition ist eine virtuelle Spedition (VTC), die Wert auf Realismus und eine starke Gemeinschaft legt. Wir befahren die Straßen von Europa und Amerika mit höchster Präzision.</p>
-            <p>Egal ob Schwertransport oder Terminfracht – wir bringen die Ladung sicher ans Ziel.</p>
+            <h2>🚛 TruckersMP Status</h2>
+            <p>Wir sind eine offiziell registrierte VTC auf den TruckersMP Servern.</p>
+            <ul style="list-style: '🔥 '; padding-left: 20px;">
+                <li>Status: <b>Rekrutierung Offen</b></li>
+                <li>Mitglieder: Live-Liste online</li>
+                <li>Server: Simulation 1 / ProMods</li>
+            </ul>
+            <a href="https://truckersmp.com/vtc/84424" target="_blank" class="tmp-link">➔ Offizielles VTC-Profil besuchen</a>
+            <a href="
+                " target="_blank" class="tmp-link">➔ Unsere Fahrerliste (Live)</a>
         </div>
 
-        <!-- Anforderungen Sektion -->
         <div class="card">
-            <h2>Anforderungen</h2>
-            <ul style="list-style: '🐲 '; padding-left: 20px;">
-                <li>Mindestalter: 16 Jahre</li>
-                <li>Geistige Reife & Teamfähigkeit</li>
-                <li>Spaß an Simulation (ETS2/ATS)</li>
-                <li>Discord-Präsenz für Konvois</li>
-            </ul>
+            <h2>🐲 Über die Spedition</h2>
+            <p>Die Drachen Spedition vereint Trucker aus ganz Europa. Wir legen Wert auf ein realistisches Fahrbild und regelmäßige gemeinsame Konvois.</p>
+            <p>Werde Teil einer wachsenden Community unter dem Banner des Drachen.</p>
         </div>
     </div>
 
     <!-- Galerie Sektion -->
-    <h2 style="margin-top: 60px; text-align: center;">Unsere Flotte & Eindrücke</h2>
+    <h2 style="margin-top: 60px; text-align: center;">🚛 Unsere Flotte & Impressionen</h2>
     <div class="gallery">
-        <img src="https://imgur.com" alt="Flotte 1">
-        <img src="https://imgur.com" alt="Flotte 2">
-        <img src="https://imgur.com" alt="Flotte 3">
+        <img src="https://imgur.com" alt="Flotte Drachen Spedition">
+        <img src="https://imgur.com" alt="Drachen Emblem">
+        <img src="https://imgur.com" alt="ETS2 Trucking">
     </div>
 
-    <!-- Hardware Sektion -->
-    <div class="card" style="margin-top: 40px;">
-        <h2>🕹️ Management & Technik</h2>
-        <p>Unsere Speditionsleitung nutzt modernste Sim-Technik für maximale Kontrolle:</p>
-        <ul class="hardware-list">
-            <li><b>Base:</b> Moza R3 Direct Drive (eingestellt auf 2520°)</li>
-            <li><b>Lenkrad:</b> Moza TSW Truck Steering Wheel & Blinkerstock</li>
-            <li><b>Leistung:</b> NVIDIA GeForce RTX 3090 & Intel Ultra 7 265K</li>
-            <li><b>Display:</b> Quad-Monitor Setup (34" Ultrawide Main)</li>
-        </ul>
+    <!-- Hardware & Anforderungen -->
+    <div class="grid">
+        <div class="card">
+            <h2>🕹️ Management & Technik</h2>
+            <p>Gesteuert mit Profi-Equipment für maximale Präzision:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li>🖥️ <b>Grafik:</b> NVIDIA GeForce RTX 3090</li>
+                <li>⚙️ <b>Base:</b> Moza R3 Direct Drive (2520°)</li>
+                <li>🏎️ <b>Wheel:</b> Moza TSW Truck Steering Wheel</li>
+                <li>📐 <b>Anzeige:</b> Quad-Monitor Setup (34" Ultrawide)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📜 Unsere Regeln</h2>
+            <ul style="list-style: '✅ '; padding-left: 20px;">
+                <li>Mindestalter: 16 Jahre</li>
+                <li>Respektvoller Umgang im Voice-Chat</li>
+                <li>Regelmäßige Aktivität bei Konvois</li>
+                <li>Einhaltung der TruckersMP Regeln</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Call to Action -->
-    <div class="cta-box">
-        <h2>Werde Teil des Teams!</h2>
-        <p>Bist du bereit für deine erste Tour unter dem Banner des Drachen?</p>
-        <a href="https://discord.gg/JefFC8f9Na" target="_blank" class="btn">JETZT BEWERBEN (DISCORD)</a>
+    <!-- Bewerbung -->
+    <div style="text-align: center; margin-top: 70px; background: #111; padding: 50px; border-radius: 20px; border: 1px solid #222;">
+        <h2>Bist du bereit für deine erste Tour?</h2>
+        <p>Komm in unsere Zentrale und bewirb dich noch heute.</p>
+        <a href="https://discord.gg" target="_blank" class="btn">JETZT BEWERBEN (DISCORD)</a>
     </div>
 
 </div>
 
 <footer>
-    &copy; 2026 Drachen Spedition | Virtual Trucking Company | TruckersMP Partner VTC
+    &copy; 2026 Drachen Spedition | Alle Rechte vorbehalten | Inoffizielle VTC Partnerseite
 </footer>
 
 </body>

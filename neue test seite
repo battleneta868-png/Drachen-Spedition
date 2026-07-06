@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drachen Spedition | Excellence in Logistics</title>
+    <style>
+        :root { 
+            --drachen-gruen: #2bcd03; 
+            --drachen-glow: rgba(43, 205, 3, 0.4);
+            --dark-bg: #0a0a0a; 
+            --panel-bg: #151515; 
+            --input-bg: #050505;
+        }
+        
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: #eeeeee; margin: 0; padding: 0; line-height: 1.6; overflow-x: hidden; }
+
+        /* HERO HEADER */
+        header { 
+            width: 100%; 
+            height: 70vh; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('7ac4ae0c-8951-4d75-913b-1dc2a715e533.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 4px solid var(--drachen-gruen);
+            box-shadow: 0 10px 30px black;
+        }
+
+        header h1 { font-size: clamp(2.5rem, 8vw, 5rem); color: var(--drachen-gruen); margin: 0; letter-spacing: 8px; text-shadow: 0 0 20px black; text-transform: uppercase; }
+        header p { font-size: 1.2rem; color: #ccc; letter-spacing: 3px; font-weight: 300; margin-top: 10px; }
+
+        /* Navigation */
+        .nav-container { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            margin: -35px 0 40px 0; 
+            padding: 0 15px; 
+            position: sticky;
+            top: 20px;
+            z-index: 100; 
+        }
+        .tab-btn { 
+            background: rgba(0,0,0,0.9); 
+            color: white; 
+            border: 1px solid var(--drachen-gruen); 
+            padding: 12px 25px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            border-radius: 4px; 
+            transition: 0.3s ease; 
+            font-size: 0.9rem; 
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+        .tab-btn:hover, .tab-btn.active { 
+            background: var(--drachen-gruen); 
+            color: black; 
+            box-shadow: 0 0 25px var(--drachen-glow); 
+            transform: translateY(-5px); 
+        }
+
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        
+        /* Sections */
+        .content-section { display: none; animation: fadeIn 0.6s ease-out; }
+        .content-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .card { 
+            background: var(--panel-bg); 
+            padding: 50px 30px; 
+            border-radius: 8px; 
+            border-left: 4px solid var(--drachen-gruen); 
+            margin-bottom: 40px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6); 
+        }
+        
+        h2 { color: var(--drachen-gruen); text-transform: uppercase; margin-top: 0; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+
+        /* Formular Styling */
+        .form-group { margin-bottom: 20px; text-align: left; }
+        label { display: block; margin-bottom: 8px; color: #aaa; font-size: 0.9rem; }
+        input, textarea, select { 
+            width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #333; 
+            background: var(--input-bg); color: white; font-size: 1rem; transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-color: var(--drachen-gruen); outline: none; box-shadow: 0 0 10px var(--drachen-glow); }
+
+        .btn { 
+            background: var(--drachen-gruen); color: black; padding: 15px 40px; 
+            text-decoration: none; border-radius: 4px; font-weight: bold; 
+            display: inline-block; transition: 0.3s; border: none; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1px; width: 100%;
+        }
+        .btn:hover { background: #fff; transform: scale(1.02); box-shadow: 0 0 30px var(--drachen-glow); }
+
+        /* Grid für Galerie & Info */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; filter: grayscale(30%); transition: 0.4s; border: 1px solid #222; }
+        .gallery img:hover { filter: grayscale(0%); border-color: var(--drachen-gruen); }
+
+        footer { text-align: center; padding: 60px 20px; color: #444; border-top: 1px solid #111; margin-top: 50px; }
+        
+        .status-badge { display: inline-block; padding: 5px 15px; border-radius: 20px; background: #1a3311; color: var(--drachen-gruen); font-size: 0.8rem; font-weight: bold; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="status-badge">● SYSTEM ONLINE - VTC ID: 84424</div>
+    <h1>DRACHEN SPEDITION</h1>
+    <p>LOGISTIK MIT LEIDENSCHAFT SEIT 2026</p>
+</header>
+
+<nav class="nav-container">
+    <button class="tab-btn active" onclick="openTab(event, 'home')">Startseite</button>
+    <button class="tab-btn" onclick="openTab(event, 'vorstellung')">Über Uns</button>
+    <button class="tab-btn" onclick="openTab(event, 'regeln')">Fuhrpark & Design</button>
+    <button class="tab-btn" onclick="openTab(event, 'konvoi')">Konvoi-Anmeldung</button>
+    <button class="tab-btn" onclick="openTab(event, 'bewerben')">Karriere</button>
+</nav>
+
+<div class="container">
+    
+    <!-- HOME -->
+    <div id="home" class="content-section active">
+        <div class="card">
+            <h2>Willkommen auf dem Asphalt</h2>
+            <p>Die Drachen Spedition ist mehr als nur ein VTC. Wir sind eine Familie aus virtuellen Fernfahrern, die Wert auf Gemeinschaft und entspanntes Fahren legt. Bei uns zählt der Mensch hinter dem Lenkrad, nicht die gefahrenen Kilometer.</p>
+            <div class="grid-2 gallery" style="margin-top: 30px;">
+                <img src="b38fdb99-79e5-4217-99b2-9f90bf9454da.png" alt="Truck 1">
+                <img src="content.png" alt="Truck 2">
+                <img src="content1.png" alt="Truck 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- ÜBER UNS -->
+    <div id="vorstellung" class="content-section">
+        <div class="card">
+            <h2>Unsere Philosophie</h2>
+            <div class="grid-2">
+                <div style="text-align: left;">
+                    <h3 style="color: white;">Warum wir?</h3>
+                    <p>Wir verzichten bewusst auf harten Leistungsdruck. Ob du 100km oder 10.000km fährst, entscheidest du selbst. Unser Fokus liegt auf gemeinsamen Events und dem Austausch im Discord.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 4px;">
+                    <ul style="list-style: none; padding: 0; text-align: left;">
+                        <li>✅ <b>Freie LKW-Wahl:</b> Fahre deine Lieblingsmarke.</li>
+                        <li>✅ <b>Kein Zeitstress:</b> Real-Life hat immer Vorrang.</li>
+                        <li>✅ <b>Events:</b> Regelmäßige Firmen-Konvois.</li>
+                        <li>✅ <b>Voraussetzung:</b> Mindestalter 16 Jahre & Discord.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESIGN -->
+    <div id="regeln" class="content-section">
+        <div class="card">
+            <h2>Corporate Identity</h2>
+            <p>Ein einheitliches Auftreten stärkt unser Image auf den Straßen von TruckersMP.</p>
+            <div class="grid-2" style="margin-top: 30px;">
+                <div style="background: #000; padding: 20px; border-radius: 4px; border-top: 3px solid var(--drachen-gruen);">
+                    <h4 style="margin-top:0;">LKW Lackierung</h4>
+                    <p>Primär: <span style="color: var(--drachen-gruen)">Drachen-Grün (126, 100, 87)</span></p>
+                    <p>Sekundär: Anthrazit (0, 0, 20)</p>
+                </div>
+                <div style="background: #000; padding: 20px; border-radius: 4px; border-top: 3px solid #555;">
+                    <h4 style="margin-top:0;">Player Tag</h4>
+                    <p>Ingame-Tag: <span style="color: var(--drachen-gruen)">Drachen Sped</span></p>
+                    <p>Farbe: RGB 43, 205, 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KONVOI ANMELDUNG -->
+    <div id="konvoi" class="content-section">
+        <div class="card">
+            <h2>Konvoi-Einladung</h2>
+            <p>Ihr plant ein Event? Ladet uns ein! Wir prüfen eure Anfrage zeitnah.</p>
+            <form action="https://formspree.io" method="POST" style="margin-top: 30px;">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>VTC Name</label>
+                        <input type="text" name="vtc" required placeholder="Name eurer Spedition">
+                    </div>
+                    <div class="form-group">
+                        <label>Dein Discord-Name</label>
+                        <input type="text" name="discord" required placeholder="Beispiel#1234">
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Datum des Events</label>
+                        <input type="date" name="datum" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Treffpunkt & Uhrzeit</label>
+                        <input type="text" name="zeit" required placeholder="z.B. 19:30 Uhr / Berlin">
+                    </div>
+                </div>

@@ -9,7 +9,6 @@
         
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: #eeeeee; margin: 0; padding: 0; line-height: 1.6; overflow-x: hidden; }
 
-        /* HERO HEADER - Volle Breite des Fensters */
         header { 
             width: 100vw; 
             height: 60vh; 
@@ -17,7 +16,7 @@
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('7ac4ae0c-8951-4d75-913b-1dc2a715e533.png');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax Effekt */
+            background-attachment: fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -29,35 +28,33 @@
         header h1 { font-size: 4rem; color: var(--drachen-gruen); margin: 0; letter-spacing: 5px; text-shadow: 3px 3px 15px black; text-transform: uppercase; }
         header p { font-size: 1.5rem; color: white; text-shadow: 2px 2px 10px black; font-weight: bold; }
 
-        /* Navigation Reiter */
         .nav-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin: -30px 0 30px 0; padding: 0 10px; position: relative; z-index: 10; }
         .tab-btn { background: #000; color: white; border: 2px solid var(--drachen-gruen); padding: 12px 30px; cursor: pointer; font-weight: bold; border-radius: 5px; transition: 0.3s; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .tab-btn:hover, .tab-btn.active { background: var(--drachen-gruen); color: black; box-shadow: 0 0 20px var(--drachen-gruen); transform: translateY(-3px); }
 
         .container { max-width: 1100px; margin: auto; padding: 20px; text-align: center; }
         
-        /* Content Logik */
         .content-section { display: none; animation: fadeIn 0.5s ease; }
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         .card { background: var(--panel-bg); padding: 40px; border-radius: 15px; border-top: 5px solid var(--drachen-gruen); margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        h2, h3 { color: var(--drachen-gruen); text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
+        h2 { color: var(--drachen-gruen); text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
         
-        /* Galerie */
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0; }
         .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid #222; transition: 0.3s; }
-        .gallery img:hover { border-color: var(--drachen-gruen); transform: scale(1.02); }
         
-        /* Design Boxen */
         .paint-box { background: #000; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 15px auto; max-width: 700px; text-align: left; }
-        .color-code { font-family: monospace; color: var(--drachen-gruen); font-weight: bold; font-size: 1.2rem; }
+        .color-code { font-family: monospace; color: var(--drachen-gruen); font-weight: bold; }
         
-        .btn { background: var(--drachen-gruen); color: black; padding: 20px 60px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.5rem; display: inline-block; transition: 0.3s; margin-top: 20px; box-shadow: 0 5px 25px rgba(43, 205, 3, 0.4); }
-        .btn:hover { background: #1e8a02; color: white; transform: scale(1.05); box-shadow: 0 5px 35px var(--drachen-gruen); }
+        /* Formular Felder */
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white; }
+        label { display: block; text-align: left; margin-bottom: 5px; font-weight: bold; color: var(--drachen-gruen); }
+
+        .btn { background: var(--drachen-gruen); color: black; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; margin-top: 10px; border: none; cursor: pointer; width: 100%; }
+        .btn:hover { background: white; transform: scale(1.02); }
         
-        .tmp-link { color: var(--drachen-gruen); text-decoration: none; font-weight: bold; display: block; margin-top: 15px; border: 1px solid var(--drachen-gruen); padding: 15px; border-radius: 8px; transition: 0.3s; }
-        .tmp-link:hover { background: var(--drachen-gruen); color: black; }
+        .tmp-link { color: var(--drachen-gruen); text-decoration: none; font-weight: bold; display: block; margin-top: 15px; border: 1px solid var(--drachen-gruen); padding: 15px; border-radius: 8px; }
 
         footer { text-align: center; padding: 80px 20px; color: #555; font-size: 0.9rem; }
     </style>
@@ -72,8 +69,8 @@
 <nav class="nav-container">
     <button class="tab-btn active" onclick="openTab(event, 'home')">Startseite</button>
     <button class="tab-btn" onclick="openTab(event, 'vorstellung')">Vorstellung</button>
-    <button class="tab-btn" onclick="openTab(event, 'regeln')">Regeln & Design</button>
-    <button class="tab-btn" onclick="openTab(event, 'truckersmp')">TruckersMP</button>
+    <button class="tab-btn" onclick="openTab(event, 'regeln')">Design</button>
+    <button class="tab-btn" onclick="openTab(event, 'konvoi')">Konvoi-Einladung</button>
     <button class="tab-btn" onclick="openTab(event, 'bewerben')">Bewerben</button>
 </nav>
 
@@ -83,7 +80,7 @@
     <div id="home" class="content-section active">
         <div class="card">
             <h2>Willkommen in der Zentrale!</h2>
-            <p>Herzlich Willkommen bei der Drachen Spedition! Wir sind eine Gemeinschaft von leidenschaftlichen Truckern, die ohne Druck und starre Regeln die Straßen unsicher machen.</p>
+            <p>Wir sind eine Gemeinschaft von leidenschaftlichen Truckern, die ohne Druck die Straßen unsicher machen.</p>
             <div class="gallery">
                 <img src="b38fdb99-79e5-4217-99b2-9f90bf9454da.png" alt="Impression 1">
                 <img src="content.png" alt="Impression 2">
@@ -96,26 +93,22 @@
     <div id="vorstellung" class="content-section">
         <div class="card">
             <h2>Was uns ausmacht</h2>
-            <ul style="list-style: none; padding: 0; font-size: 1.2rem;">
-                <li>🚫 <b>Kein Kilometerzwang:</b> Fahr so viel oder so wenig du willst.</li>
-                <li>❌ <b>Reallife geht vor:</b> Es gibt keine Pflicht-Onlinezeiten.</li>
-                <li>🤝 <b>Gemeinschaft:</b> Spontane Runden und gemeinsame Events.</li>
-                <li>🎮 <b>Hardware egal:</b> Wheel, Controller, Tastatur oder Maus - jeder ist willkommen!</li>
+            <ul style="list-style: none; padding: 0; font-size: 1.2rem; text-align: left; max-width: 600px; margin: auto;">
+                <li>🚫 <b>Kein Kilometerzwang:</b> Fahr so viel du willst.</li>
+                <li>❌ <b>Reallife geht vor:</b> Keine Pflicht-Onlinezeiten.</li>
+                <li>🤝 <b>Gemeinschaft:</b> Gemeinsame Events & Runden.</li>
+                <li>🎮 <b>Hardware egal:</b> Jeder ist willkommen!</li>
             </ul>
         </div>
     </div>
 
-    <!-- REGELN & DESIGN -->
+    <!-- DESIGN -->
     <div id="regeln" class="content-section">
         <div class="card">
-            <h2>Firmenlackierung & Tag</h2>
+            <h2>Firmenlackierung</h2>
             <div class="paint-box">
                 <strong>🚛 LKW Design:</strong><br>
-                Grün: <span class="color-code">126 | 100 | 87</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
-            </div>
-            <div class="paint-box">
-                <strong>📦 Trailer Design:</strong><br>
-                Grün: <span class="color-code">126 | 100 | 100</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
+                Grün: <span class="color-code">126 | 100 | 87</span> | Grau: <span class="color-code">0 | 0 | 20</span>
             </div>
             <div class="paint-box">
                 <strong>🏷️ Player-Tag:</strong><br>
@@ -124,40 +117,54 @@
         </div>
     </div>
 
-    <!-- TRUCKERSMP -->
-    <div id="truckersmp" class="content-section">
+    <!-- KONVOI ANMELDUNG -->
+    <div id="konvoi" class="content-section">
         <div class="card">
-            <h2>📊 VTC-Statistiken</h2>
-            <a href="https://truckersmp.com" target="_blank" class="tmp-link">➔ Offizielles VTC Profil (ID: 84424)</a>
-            <a href="https://truckersmp.com/members" target="_blank" class="tmp-link">➔ Unsere Fahrerliste</a>
+            <h2>Konvoi-Einladung senden</h2>
+            <p>Trage hier die Details ein. Wir kontaktieren dich per Discord!</p>
+            <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
+                <label>Name der Spedition:</label>
+                <input type="text" name="vtc_name" required>
+                
+                <label>Dein Discord-Name (Kontakt):</label>
+                <input type="text" name="discord_kontakt" placeholder="name#0000" required>
+                
+                <label>Datum & Uhrzeit:</label>
+                <input type="text" name="datum_uhrzeit" placeholder="z.B. 12.07. um 20 Uhr" required>
+
+                <label>Weitere Infos (Server, Route, TS):</label>
+                <textarea name="details" rows="4" required></textarea>
+                
+                <button type="submit" class="btn">EINLADUNG ABSCHICKEN</button>
+            </form>
         </div>
     </div>
 
-<!-- BEWERBEN -->
-<div id="bewerben" class="content-section">
-    <div class="card">
-        <h2>Werde Teil des Teams!</h2>
-        <p>Lust auf entspanntes Cruisen? Bewirb dich direkt hier oder über Discord.</p>
-        
-        <!-- Kontaktformular -->
-        <form action="https://formspree.io" method="POST" style="max-width: 500px; margin: 20px auto; text-align: left;">
-            <label style="display:block; margin-bottom: 5px;">Dein TruckersMP-Name:</label>
-            <input type="text" name="name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
-            
-            <label style="display:block; margin-bottom: 5px;">Deine E-Mail Adresse:</label>
-            <input type="email" name="_replyto" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
-            
-            <label style="display:block; margin-bottom: 5px;">Warum möchtest du zu uns?</label>
-            <textarea name="message" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;"></textarea>
-            
-            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">BEWERBUNG ABSCHICKEN</button>
-        </form>
+    <!-- BEWERBEN -->
+    <div id="bewerben" class="content-section">
+        <div class="card">
+            <h2>Werde ein Drache</h2>
+            <p>Fülle das Formular aus und wir melden uns bei dir!</p>
+            <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
+                <label>Dein Name / Ingame-Name:</label>
+                <input type="text" name="bewerber_name" required>
+                
+                <label>Dein Discord-Name (Pflicht für Kontakt):</label>
+                <input type="text" name="bewerber_discord" placeholder="name#0000" required>
+                
+                <label>Wie viele Stunden hast du ca. in ETS2/ATS?</label>
+                <input type="number" name="stunden">
 
-        <p style="margin-top: 30px;">Oder komm auf unseren Server:</p>
-        <a href="https://discord.gg" target="_blank" class="btn" style="font-size: 1rem; padding: 10px 30px;">DISCORD BEITRETEN</a>
+                <label>Kurze Vorstellung:</label>
+                <textarea name="vorstellung" rows="4" placeholder="Erzähl uns kurz wer du bist..."></textarea>
+                
+                <button type="submit" class="btn">BEWERBUNG EINREICHEN</button>
+            </form>
+            <p style="margin-top: 20px;">Oder direkt über <a href="https://discord.gg" target="_blank" style="color: var(--drachen-gruen);">Discord</a>.</p>
+        </div>
     </div>
-</div>
 
+</div>
 
 <footer>&copy; 2026 Drachen Spedition | VTC-ID: 84424</footer>
 
@@ -174,46 +181,3 @@
 </script>
 </body>
 </html>
-<!-- KONVOI EINLADUNG -->
-<div id="konvoi" class="content-section">
-    <div class="card">
-        <h2>Konvoi-Einladung senden</h2>
-        <p>Trage hier die Details ein. Wir kontaktieren dich dann über Discord!</p>
-        
-        <!-- WICHTIG: Die E-Mail Benachrichtigung geht an DICH (über die Formspree-ID) -->
-        <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: 20px auto; text-align: left;">
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div>
-                    <label style="display:block; margin-bottom: 5px;">Name der Spedition:</label>
-                    <input type="text" name="vtc_name" required placeholder="z.B. Drachen Spedition" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
-                </div>
-                <div>
-                    <!-- HIER: Discord statt E-Mail -->
-                    <label style="display:block; margin-bottom: 5px;">Dein Discord-Name:</label>
-                    <input type="text" name="discord_kontakt" required placeholder="name#0000" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div>
-                    <label style="display:block; margin-bottom: 5px;">Datum des Konvois:</label>
-                    <input type="date" name="datum" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
-                </div>
-                <div>
-                    <label style="display:block; margin-bottom: 5px;">Uhrzeit (Treffen):</label>
-                    <input type="time" name="uhrzeit" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
-                </div>
-            </div>
-
-            <label style="display:block; margin-bottom: 5px;">Zusätzliche Infos (Server, Route, Discord-Link):</label>
-            <textarea name="details" rows="5" placeholder="Bitte alle wichtigen Links und Infos hier eintragen..." required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;"></textarea>
-            
-            <!-- Optionales Feld für die Speditions-E-Mail, falls Discord nicht klappt -->
-            <input type="hidden" name="_subject" value="Neue Konvoi-Einladung von der Webseite!">
-            
-            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">EINLADUNG ABSCHICKEN</button>
-        </form>
-    </div>
-</div>
-

@@ -133,16 +133,31 @@
         </div>
     </div>
 
-    <!-- BEWERBEN -->
-    <div id="bewerben" class="content-section">
-        <div class="card">
-            <h2>Werde Teil des Teams!</h2>
-            <p>Lust auf entspanntes Cruisen in einer coolen Truppe? Melde dich über Discord!</p>
-            <a href="https://discord.gg" target="_blank" class="btn">JETZT BEWERBEN (DISCORD)</a>
-        </div>
-    </div>
+<!-- BEWERBEN -->
+<div id="bewerben" class="content-section">
+    <div class="card">
+        <h2>Werde Teil des Teams!</h2>
+        <p>Lust auf entspanntes Cruisen? Bewirb dich direkt hier oder über Discord.</p>
+        
+        <!-- Kontaktformular -->
+        <form action="https://formspree.io" method="POST" style="max-width: 500px; margin: 20px auto; text-align: left;">
+            <label style="display:block; margin-bottom: 5px;">Dein TruckersMP-Name:</label>
+            <input type="text" name="name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
+            
+            <label style="display:block; margin-bottom: 5px;">Deine E-Mail Adresse:</label>
+            <input type="email" name="_replyto" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
+            
+            <label style="display:block; margin-bottom: 5px;">Warum möchtest du zu uns?</label>
+            <textarea name="message" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;"></textarea>
+            
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">BEWERBUNG ABSCHICKEN</button>
+        </form>
 
+        <p style="margin-top: 30px;">Oder komm auf unseren Server:</p>
+        <a href="https://discord.gg" target="_blank" class="btn" style="font-size: 1rem; padding: 10px 30px;">DISCORD BEITRETEN</a>
+    </div>
 </div>
+
 
 <footer>&copy; 2026 Drachen Spedition | VTC-ID: 84424</footer>
 

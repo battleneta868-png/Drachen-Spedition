@@ -174,4 +174,46 @@
 </script>
 </body>
 </html>
+<!-- KONVOI EINLADUNG -->
+<div id="konvoi" class="content-section">
+    <div class="card">
+        <h2>Konvoi-Einladung senden</h2>
+        <p>Trage hier die Details ein. Wir kontaktieren dich dann über Discord!</p>
+        
+        <!-- WICHTIG: Die E-Mail Benachrichtigung geht an DICH (über die Formspree-ID) -->
+        <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: 20px auto; text-align: left;">
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <label style="display:block; margin-bottom: 5px;">Name der Spedition:</label>
+                    <input type="text" name="vtc_name" required placeholder="z.B. Drachen Spedition" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
+                </div>
+                <div>
+                    <!-- HIER: Discord statt E-Mail -->
+                    <label style="display:block; margin-bottom: 5px;">Dein Discord-Name:</label>
+                    <input type="text" name="discord_kontakt" required placeholder="name#0000" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <label style="display:block; margin-bottom: 5px;">Datum des Konvois:</label>
+                    <input type="date" name="datum" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom: 5px;">Uhrzeit (Treffen):</label>
+                    <input type="time" name="uhrzeit" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;">
+                </div>
+            </div>
+
+            <label style="display:block; margin-bottom: 5px;">Zusätzliche Infos (Server, Route, Discord-Link):</label>
+            <textarea name="details" rows="5" placeholder="Bitte alle wichtigen Links und Infos hier eintragen..." required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white;"></textarea>
+            
+            <!-- Optionales Feld für die Speditions-E-Mail, falls Discord nicht klappt -->
+            <input type="hidden" name="_subject" value="Neue Konvoi-Einladung von der Webseite!">
+            
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">EINLADUNG ABSCHICKEN</button>
+        </form>
+    </div>
+</div>
 

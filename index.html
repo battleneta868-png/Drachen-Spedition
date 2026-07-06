@@ -109,7 +109,6 @@
             Grün: <span class="color-code">126 | 100 | 87</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
         </div>
 
-        <!-- NEU: Trailer Design hinzugefügt -->
         <div class="paint-box">
             <strong>📦 Trailer Design:</strong><br>
             Grün: <span class="color-code">126 | 100 | 100</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
@@ -123,22 +122,23 @@
 </div>
 
 
-<form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
-    <label>Name der Spedition:</label>
-    <input type="text" name="vtc_name" required>
-    
-    <label>Dein Discord-Name (Kontakt):</label>
-    <input type="text" name="discord_kontakt" placeholder="name#0000" required>
-    
-    <label>Datum & Uhrzeit des Konvois:</label>
-    <input type="text" name="datum_uhrzeit" placeholder="z.B. 20.08. um 19:30 Uhr" required>
-
-    <label>Weitere Infos (Server, Route, TS):</label>
-    <textarea name="details" rows="4" required></textarea>
-    
-    <button type="submit" class="btn">EINLADUNG ABSCHICKEN</button>
-</form>
-
+    <!-- KONVOI ANMELDUNG -->
+    <div id="konvoi" class="content-section">
+        <div class="card">
+            <h2>Konvoi-Einladung senden</h2>
+            <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
+                <label>Name der Spedition:</label>
+                <input type="text" name="vtc_name" required>
+                <label>Dein Discord-Name (Kontakt):</label>
+                <input type="text" name="discord_kontakt" placeholder="name#0000" required>
+                <label>Datum & Uhrzeit des Konvois:</label>
+                <input type="text" name="datum_uhrzeit" placeholder="z.B. 20.08. um 19:30 Uhr" required>
+                <label>Weitere Infos (Server, Route, TS):</label>
+                <textarea name="details" rows="4" required></textarea>
+                <button type="submit" class="btn">EINLADUNG ABSCHICKEN</button>
+            </form>
+        </div>
+    </div>
 
     <!-- BEWERBEN -->
     <div id="bewerben" class="content-section">
@@ -146,19 +146,18 @@
             <h2>Werde ein Drache</h2>
             <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
                 <label>Name / Ingame-Name:</label>
-                <input type="text" name="name" required>
+                <input type="text" name="bewerber_name" required>
                 <label>Discord-Name:</label>
-                <input type="text" name="discord" placeholder="name#0000" required>
+                <input type="text" name="bewerber_discord" placeholder="name#0000" required>
                 <label>ETS2/ATS Stunden:</label>
                 <input type="number" name="stunden">
                 <label>Kurze Vorstellung:</label>
-                <textarea name="vorstellung" rows="4"></textarea>
+                <textarea name="vorstellung" rows="4" placeholder="Erzähl uns kurz wer du bist..."></textarea>
                 <button type="submit" class="btn">BEWERBUNG EINREICHEN</button>
             </form>
         </div>
     </div>
 
-</div>
 
 <footer>&copy; 2026 Drachen Spedition | VTC-ID: 84424</footer>
 

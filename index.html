@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drachen Spedition | Offizielle Homepage</title>
     <style>
-        :root { --drachen-gruen: #2bcd03; --dark-bg: #0a0a0a; --panel-bg: #111111; }
+        :root { --drachen-gruen: #2bcd03; --drachen-glow: rgba(43, 205, 3, 0.4); --dark-bg: #0a0a0a; --panel-bg: #111111; }
         
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: #eeeeee; margin: 0; padding: 0; line-height: 1.6; overflow-x: hidden; }
 
@@ -47,14 +47,11 @@
         .paint-box { background: #000; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 15px auto; max-width: 700px; text-align: left; }
         .color-code { font-family: monospace; color: var(--drachen-gruen); font-weight: bold; }
         
-        /* Formular Felder */
         input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #000; color: white; }
         label { display: block; text-align: left; margin-bottom: 5px; font-weight: bold; color: var(--drachen-gruen); }
 
         .btn { background: var(--drachen-gruen); color: black; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; margin-top: 10px; border: none; cursor: pointer; width: 100%; }
         .btn:hover { background: white; transform: scale(1.02); }
-        
-        .tmp-link { color: var(--drachen-gruen); text-decoration: none; font-weight: bold; display: block; margin-top: 15px; border: 1px solid var(--drachen-gruen); padding: 15px; border-radius: 8px; }
 
         footer { text-align: center; padding: 80px 20px; color: #555; font-size: 0.9rem; }
     </style>
@@ -68,9 +65,9 @@
 
 <nav class="nav-container">
     <button class="tab-btn active" onclick="openTab(event, 'home')">Startseite</button>
-    <button class="tab-btn" onclick="openTab(event, 'vorstellung')">Vorstellung</button>
+    <button class="tab-btn" onclick="openTab(event, 'events')">Event-Planer</button>
     <button class="tab-btn" onclick="openTab(event, 'regeln')">Design</button>
-    <button class="tab-btn" onclick="openTab(event, 'konvoi')">Konvoi-Einladung</button>
+    <button class="tab-btn" onclick="openTab(event, 'konvoi')">Konvoi-Anmeldung</button>
     <button class="tab-btn" onclick="openTab(event, 'bewerben')">Bewerben</button>
 </nav>
 
@@ -89,16 +86,16 @@
         </div>
     </div>
 
-    <!-- VORSTELLUNG -->
-    <div id="vorstellung" class="content-section">
+    <!-- EVENT KALENDER -->
+    <div id="events" class="content-section">
         <div class="card">
-            <h2>Was uns ausmacht</h2>
-            <ul style="list-style: none; padding: 0; font-size: 1.2rem; text-align: left; max-width: 600px; margin: auto;">
-                <li>🚫 <b>Kein Kilometerzwang:</b> Fahr so viel du willst.</li>
-                <li>❌ <b>Reallife geht vor:</b> Keine Pflicht-Onlinezeiten.</li>
-                <li>🤝 <b>Gemeinschaft:</b> Gemeinsame Events & Runden.</li>
-                <li>🎮 <b>Hardware egal:</b> Jeder ist willkommen!</li>
-            </ul>
+            <h2>Live Event-Planer</h2>
+            <p>Alle Termine werden automatisch mit dem Google Kalender synchronisiert.</p>
+            <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 10px; border: 2px solid var(--drachen-gruen); background: #151515;">
+                <iframe src="https://google.com" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    frameborder="0" scrolling="no"></iframe>
+            </div>
         </div>
     </div>
 
@@ -121,109 +118,33 @@
     <div id="konvoi" class="content-section">
         <div class="card">
             <h2>Konvoi-Einladung senden</h2>
-            <p>Trage hier die Details ein. Wir kontaktieren dich per Discord!</p>
-            <form action="https://formspree.io/f/maqgvrrq" method="POST" style="max-width: 600px; margin: auto;">
+            <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
                 <label>Name der Spedition:</label>
                 <input type="text" name="vtc_name" required>
-                
-                <label>Dein Discord-Name (Kontakt):</label>
+                <label>Dein Discord-Name:</label>
                 <input type="text" name="discord_kontakt" placeholder="name#0000" required>
-                
-                <label>Datum & Uhrzeit:</label>
-                <input type="text" name="datum_uhrzeit" placeholder="z.B. 12.07. um 20 Uhr" required>
-
-                <label>Weitere Infos (Server, Route, TS):</label>
+                <label>Weitere Infos (Server, Route):</label>
                 <textarea name="details" rows="4" required></textarea>
-                
                 <button type="submit" class="btn">EINLADUNG ABSCHICKEN</button>
             </form>
         </div>
     </div>
-<!-- EVENT KALENDER -->
-<div id="events" class="content-section">
-    <div class="card">
-        <h2>Live Event-Planer</h2>
-        <p>Alle bestätigten Konvois und Termine werden hier automatisch synchronisiert.</p>
-        
-        <!-- Kalender Container -->
-        <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 10px; border: 2px solid var(--drachen-gruen); box-shadow: 0 0 20px var(--drachen-glow); background: #fff;">
-            
-            <!-- WICHTIG: Ersetze den Link im 'src' durch deinen eigenen Google-Link unten -->
-            <iframe src="<!-- EVENT KALENDER -->
-<div id="events" class="content-section">
-    <div class="card">
-        <h2>Live Event-Planer</h2>
-        <p>Hier siehst du alle bestätigten Konvois. Termine werden automatisch synchronisiert.</p>
-        
-        <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 10px; border: 2px solid var(--drachen-gruen); box-shadow: 0 0 20px var(--drachen-glow); background: #151515;">
-            <iframe src="https://google.com" 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                frameborder="0" scrolling="no"></iframe>
-        </div>
-        
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #555;">Hinweis: Neue Einladungen per E-Mail erscheinen hier nach der Bestätigung automatisch.</p>
-    </div>
-</div>
-<!-- EVENT KALENDER -->
-<div id="events" class="content-section">
-    <div class="card">
-        <h2>Live Event-Planer</h2>
-        <p>Hier siehst du alle bestätigten Konvois. Termine werden automatisch synchronisiert.</p>
-        
-        <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 10px; border: 2px solid var(--drachen-gruen); box-shadow: 0 0 20px var(--drachen-glow); background: #151515;">
-            <iframe src="03ab0fe60d7767679cd31e102f65f5e7e1d3f8356325abae6788a56c75060d18@group.calendar.google.com<!-- EVENT KALENDER -->
-<div id="events" class="content-section">
-    <div class="card">
-        <h2>Live Event-Planer</h2>
-        <p>Hier siehst du alle bestätigten Konvois. Termine werden automatisch synchronisiert.</p>
-        
-        <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 10px; border: 2px solid var(--drachen-gruen); box-shadow: 0 0 20px var(--drachen-glow); background: #151515;">
-            <iframe src="https://google.com" 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                frameborder="0" scrolling="no"></iframe>
-        </div>
-        
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #555;">Hinweis: Neue Einladungen per E-Mail erscheinen hier nach der Bestätigung automatisch.</p>
-    </div>
-</div>
-" 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                frameborder="0" scrolling="no"></iframe>
-        </div>
-        
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #555;">Hinweis: Neue Einladungen per E-Mail erscheinen hier nach der Bestätigung automatisch.</p>
-    </div>
-</div>
-" 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                frameborder="0" scrolling="no"></iframe>
-        </div>
-        
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #555;">Tipp: Klicke auf die Termine für mehr Details zur Route und zum Treffpunkt.</p>
-    </div>
-</div>
 
     <!-- BEWERBEN -->
     <div id="bewerben" class="content-section">
         <div class="card">
             <h2>Werde ein Drache</h2>
-            <p>Fülle das Formular aus und wir melden uns bei dir!</p>
-            <form action="https://formspree.io/f/maqgvrrq" method="POST" style="max-width: 600px; margin: auto;">
-                <label>Dein Name / Ingame-Name:</label>
-                <input type="text" name="bewerber_name" required>
-                
-                <label>Dein Discord-Name (Pflicht für Kontakt):</label>
-                <input type="text" name="bewerber_discord" placeholder="name#0000" required>
-                
-                <label>Wie viele Stunden hast du ca. in ETS2/ATS?</label>
+            <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
+                <label>Name / Ingame-Name:</label>
+                <input type="text" name="name" required>
+                <label>Discord-Name:</label>
+                <input type="text" name="discord" placeholder="name#0000" required>
+                <label>ETS2/ATS Stunden:</label>
                 <input type="number" name="stunden">
-
                 <label>Kurze Vorstellung:</label>
-                <textarea name="vorstellung" rows="4" placeholder="Erzähl uns kurz wer du bist..."></textarea>
-                
+                <textarea name="vorstellung" rows="4"></textarea>
                 <button type="submit" class="btn">BEWERBUNG EINREICHEN</button>
             </form>
-            <p style="margin-top: 20px;">Oder direkt über <a href="https://discord.gg" target="_blank" style="color: var(--drachen-gruen);">Discord</a>.</p>
         </div>
     </div>
 
@@ -244,5 +165,3 @@
 </script>
 </body>
 </html>
-
-

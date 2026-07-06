@@ -99,36 +99,46 @@
         </div>
     </div>
 
-    <!-- DESIGN -->
-    <div id="regeln" class="content-section">
-        <div class="card">
-            <h2>Firmenlackierung</h2>
-            <div class="paint-box">
-                <strong>🚛 LKW Design:</strong><br>
-                Grün: <span class="color-code">126 | 100 | 87</span> | Grau: <span class="color-code">0 | 0 | 20</span>
-            </div>
-            <div class="paint-box">
-                <strong>🏷️ Player-Tag:</strong><br>
-                Text: <span class="color-code">Drachen Sped</span> | Farbe: <span class="color-code">R: 43 | G: 205 | B: 3</span>
-            </div>
+<!-- DESIGN -->
+<div id="regeln" class="content-section">
+    <div class="card">
+        <h2>Firmenlackierung & Tag</h2>
+        
+        <div class="paint-box">
+            <strong>🚛 LKW Design:</strong><br>
+            Grün: <span class="color-code">126 | 100 | 87</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
         </div>
-    </div>
 
-    <!-- KONVOI ANMELDUNG -->
-    <div id="konvoi" class="content-section">
-        <div class="card">
-            <h2>Konvoi-Einladung senden</h2>
-            <form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
-                <label>Name der Spedition:</label>
-                <input type="text" name="vtc_name" required>
-                <label>Dein Discord-Name:</label>
-                <input type="text" name="discord_kontakt" placeholder="name#0000" required>
-                <label>Weitere Infos (Server, Route):</label>
-                <textarea name="details" rows="4" required></textarea>
-                <button type="submit" class="btn">EINLADUNG ABSCHICKEN</button>
-            </form>
+        <!-- NEU: Trailer Design hinzugefügt -->
+        <div class="paint-box">
+            <strong>📦 Trailer Design:</strong><br>
+            Grün: <span class="color-code">126 | 100 | 100</span> | Grau: <span class="color-code">0 | 0 | 20</span> | Rest: Schwarz
+        </div>
+
+        <div class="paint-box">
+            <strong>🏷️ Player-Tag:</strong><br>
+            Text: <span class="color-code">Drachen Sped</span> | Farbe: <span class="color-code">R: 43 | G: 205 | B: 3</span>
         </div>
     </div>
+</div>
+
+
+<form action="https://formspree.io" method="POST" style="max-width: 600px; margin: auto;">
+    <label>Name der Spedition:</label>
+    <input type="text" name="vtc_name" required>
+    
+    <label>Dein Discord-Name (Kontakt):</label>
+    <input type="text" name="discord_kontakt" placeholder="name#0000" required>
+    
+    <label>Datum & Uhrzeit des Konvois:</label>
+    <input type="text" name="datum_uhrzeit" placeholder="z.B. 20.08. um 19:30 Uhr" required>
+
+    <label>Weitere Infos (Server, Route, TS):</label>
+    <textarea name="details" rows="4" required></textarea>
+    
+    <button type="submit" class="btn">EINLADUNG ABSCHICKEN</button>
+</form>
+
 
     <!-- BEWERBEN -->
     <div id="bewerben" class="content-section">
